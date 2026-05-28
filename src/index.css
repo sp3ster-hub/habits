@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Work Sans", sans-serif;
+  
+  --color-primary: #7e5714;
+  --color-primary-container: #d4a35a;
+  --color-on-primary-container: #583900;
+  --color-secondary: #805533;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fdc39a;
+  --color-surface: #fff8f0;
+  --color-surface-dim: #e4d9c0;
+  --color-surface-container: #f9edd3;
+  --color-surface-container-high: #f3e7ce;
+  --color-surface-container-highest: #ede1c8;
+  --color-on-surface: #201b0c;
+  --color-on-surface-variant: #4f4538;
+}
+
+/* Custom design utilities */
+.parchment-bg {
+  background-color: #fff8f0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(126, 87, 20, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.parchment-texture {
+  background-color: #fffaf2;
+  background-image: 
+    linear-gradient(rgba(126, 87, 20, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 87, 20, 0.015) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.hard-offset {
+  box-shadow: 4px 4px 0 0 #291800;
+}
+
+.active-nav-offset {
+  box-shadow: 4px 4px 0 0 #291800;
+}
+
+.scroll-border {
+  border: 2px dashed #817567;
+  position: relative;
+  padding: 24px;
+}
+
+.scroll-border::before, .scroll-border::after {
+  content: "◆";
+  position: absolute;
+  color: #7e5714;
+  font-size: 1.1rem;
+}
+
+.scroll-border::before {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff8f0;
+  padding: 0 12px;
+}
+
+.scroll-border::after {
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff8f0;
+  padding: 0 12px;
+}
+
+.rough-edge {
+  clip-path: polygon(0% 0%, 98% 2%, 100% 50%, 97% 98%, 0% 100%, 2% 50%);
+}
+
+.jagged-progress {
+  clip-path: polygon(0% 0%, 100% 0%, 98% 50%, 100% 100%, 0% 100%, 2% 50%);
+}
+
+.smoke-overlay {
+  background: radial-gradient(circle at top right, rgba(61, 43, 31, 0.08), transparent 70%);
+}
+
+.inner-wax-seal {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-seal {
+  animation: heartbeat 3s infinite ease-in-out;
+}

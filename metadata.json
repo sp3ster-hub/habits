@@ -1,0 +1,6 @@
+{
+  "name": "Ascendant",
+  "description": "A legendary gamified self-mastery experience. Embark on a hero's quest, build positive habits to conquer phantoms, ascend your evolution stages, and shop at the Gilded Bazaar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

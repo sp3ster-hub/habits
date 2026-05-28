@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "The user record holding personalized avatar stats, quests, phantoms, bazaar purchases, stages, and journal logs.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The authenticated Google user's unique identification UID."
+        },
+        "stats": {
+          "type": "object",
+          "description": "UserStats object keeping levels, xp, coins, and stamina values."
+        },
+        "quests": {
+          "type": "array",
+          "description": "List of active daily quests and their completion states."
+        },
+        "phantoms": {
+          "type": "array",
+          "description": "List of bestiary phantoms representing real-world bad habits."
+        },
+        "stages": {
+          "type": "array",
+          "description": "List of milestone evolution stages unlocked by the player."
+        },
+        "bazaarItems": {
+          "type": "array",
+          "description": "List of reward loot shop items and lock statuses."
+        },
+        "journal": {
+          "type": "array",
+          "description": "Recorded voice-mindfulness diary logs."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The server-synced time of the last modification."
+        }
+      },
+      "required": ["userId", "stats", "quests", "phantoms", "stages", "bazaarItems", "journal", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Document containing the entire gamified progress for each unique human player."
+    }
+  }
+}
